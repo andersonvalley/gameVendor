@@ -1,0 +1,243 @@
+.sort {
+  &__group {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    @media (max-width: 611px) {
+      flex-direction: column;
+    }
+  }
+
+  &__search {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    margin-right: 16px;
+    position: relative;
+
+    input {
+      background: #ffffff;
+      border: 1px solid #d0d5dd;
+      padding: 12px 18px 11px 45px;
+      border-radius: 8px;
+      color: #98a2b3;
+      outline: none;
+      transition: all 200ms ease-in-out;
+
+      &::placeholder {
+        color: #98a2b3;
+      }
+
+      &:hover {
+        border: 1px solid #98a2b3;
+      }
+    }
+
+    &:before {
+      content: '';
+      background-image: url('../img/sprites/s.svg');
+      width: 20px;
+      height: 20px;
+      position: absolute;
+      left: 17px;
+      top: 35px;
+      pointer-events: none;
+    }
+
+    @media (max-width: 611px) {
+      width: 100%;
+      margin-right: 0;
+    }
+  }
+
+  &__filter {
+    width: 25%;
+    margin-right: 16px;
+
+    &__input {
+      background: #ffffff;
+      border: 1px solid #d0d5dd;
+      padding: 11px 18px;
+      border-radius: 8px;
+      transition: all 200ms ease-in-out;
+    }
+  }
+
+  &__by {
+    display: flex;
+    flex-direction: column;
+    width: 25%;
+    position: relative;
+
+    select {
+      background: #ffffff;
+      border: 1px solid #d0d5dd;
+      padding: 11px 18px;
+      outline: none;
+      border-radius: 8px;
+      transition: all 200ms ease-in-out;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+
+      &:hover {
+        border: 1px solid #98a2b3;
+      }
+
+      &:hover + .sort__by-icon {
+        svg path {
+          fill: $violet;
+        }
+      }
+    }
+
+    &-icon {
+      position: absolute;
+      right: 15px;
+      top: 34px;
+      pointer-events: none;
+    }
+  }
+
+  &__label {
+    font-size: 1.4rem;
+    line-height: 2rem;
+    color: #667085;
+    margin-bottom: 4px;
+    font-weight: 400;
+  }
+}
+
+.tag {
+  display: flex;
+  align-items: center;
+  padding: 30px 0;
+
+  @media (max-width: 611px) {
+    overflow-y: scroll;
+  }
+
+  &__item {
+    display: flex;
+    align-items: center;
+    color: $violet;
+    font-size: 1.4rem;
+    line-height: 2rem;
+    background: #f4ebff;
+    border-radius: 8px;
+    padding: 10px 16px;
+    width: fit-content;
+    transition: all 200ms ease-in-out;
+
+    svg {
+      width: 20px;
+      height: 20px;
+      margin-left: 8px;
+      position: relative;
+      top: 3px;
+    }
+
+    span {
+      white-space: nowrap;
+    }
+
+    &:hover {
+      background: #e9d7fe;
+    }
+  }
+
+  &__item:not(:last-child) {
+    margin-right: 8px;
+  }
+
+  &__remove {
+    cursor: pointer;
+  }
+}
+
+.filter {
+  &__input {
+    background: #ffffff;
+    border: 1px solid #d0d5dd;
+    padding: 10px 18px;
+    border-radius: 8px;
+    transition: all 200ms ease-in-out;
+    position: relative;
+  }
+
+  &__group {
+    display: flex;
+    align-items: center;
+    margin-left: -9px;
+
+    @media (max-width: 1151px) {
+      .tag__item:nth-child(2) {
+        display: none;
+      }
+    }
+
+    @media (max-width: 877px) {
+      .tag__item:nth-child(1) {
+        display: none;
+      }
+    }
+
+    .tag__item {
+      padding: 1px 6px;
+      font-weight: 400;
+      font-size: 1.2rem;
+      line-height: 1.8rem;
+
+      svg {
+        width: 12px;
+        height: 12px;
+        top: 2px;
+      }
+    }
+  }
+}
+
+.sort__filter-icon {
+  position: absolute;
+  right: 0;
+  top: 10px;
+  right: 15px;
+}
+
+.filter__input:hover {
+  .sort__filter-icon {
+    svg path {
+      fill: $violet;
+    }
+  }
+}
+
+@media (max-width: 611px) {
+  .sort__by,
+  .sort__filter {
+    display: none;
+  }
+}
+
+.mobile__button-show {
+  display: none;
+
+  @media (max-width: 611px) {
+    display: block;
+    background: #ffffff;
+    border: 1px solid #d0d5dd;
+    border-radius: 8px;
+    width: 100%;
+    margin-top: 16px;
+    padding: 8px 18px;
+
+    svg {
+      width: 20px;
+      height: 20px;
+      position: relative;
+      top: 4px;
+      margin-right: 4px;
+    }
+  }
+}

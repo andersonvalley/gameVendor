@@ -1,0 +1,26 @@
+@import 'common/normalize';
+@import 'common/variables';
+@import 'common/mixins';
+@import 'common/settings';
+
+@import 'components/header';
+@import 'components/banner';
+@import 'components/nav';
+@import 'components/bred-crumbs';
+@import 'components/catalog';
+@import 'components/hero';
+@import 'components/pagination';
+@import 'components/faq';
+@import 'components/tab-bar';
+@import 'components/sort';
+@import 'components/footer';
+
+.container {
+  max-width: 1246px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+.main {
+  background: $bg;
+}

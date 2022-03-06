@@ -1,0 +1,50 @@
+.tab-bar {
+  width: 100%;
+  background-color: #fff;
+  position: fixed;
+  bottom: 0;
+  display: none;
+
+  @include _768 {
+    display: block;
+  }
+
+  &__list {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    height: 66px;
+  }
+
+  &__item {
+    a {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      svg {
+        margin-bottom: 8px;
+      }
+
+      span {
+        font-size: 1.2rem;
+        line-height: 1.4rem;
+        color: #98a2b3;
+      }
+    }
+  }
+
+  &__item-current {
+    a {
+      span {
+        color: $violet;
+      }
+
+      svg {
+        path {
+          fill: $violet;
+        }
+      }
+    }
+  }
+}

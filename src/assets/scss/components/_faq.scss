@@ -1,0 +1,103 @@
+.faq {
+  overflow: hidden;
+  padding-bottom: 80px;
+  padding-top: 40px;
+
+  &__title {
+    text-align: center;
+    font-size: 3.2rem;
+    line-height: 3.8rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+
+    @include _490 {
+      font-size: 2.4rem;
+      line-height: 2.8rem;
+      margin-bottom: 16px;
+      text-align: left;
+    }
+  }
+  &__descr {
+    text-align: center;
+    color: $textGray;
+    margin-bottom: 20px;
+    font-weight: 400;
+
+    @include _490 {
+      text-align: left;
+    }
+  }
+}
+
+.accordion {
+  &__item:not(:first-child) {
+    border-top: 1px solid rgb(219, 219, 219);
+  }
+
+  &__btn {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 24px 0px;
+
+    span {
+      font-size: 1.8rem;
+      line-height: 2.4rem;
+      font-weight: 600;
+    }
+
+    &-icon {
+      width: 20px;
+      height: 20px;
+      background-image: url('../img/sprites/plu.svg');
+    }
+  }
+}
+
+.content {
+  color: $textGray;
+  font-weight: 400;
+  padding-bottom: 40px;
+  opacity: 0;
+  visibility: hidden;
+  position: absolute;
+
+  p {
+    margin-bottom: 20px;
+  }
+
+  ul {
+    margin-bottom: 20px;
+    list-style-type: disc;
+    margin-left: 15px;
+
+    li {
+      margin-bottom: 8px;
+      color: $violet;
+
+      span {
+        color: $textGray;
+      }
+    }
+  }
+
+  &__sub {
+    color: $textBlack;
+    margin-bottom: 16px;
+  }
+}
+
+.accordion__btn.accordion__btn-open + .accordion__content {
+  opacity: 1;
+  visibility: visible;
+  position: static;
+  transition: all 200ms ease-in-out;
+}
+
+.accordion__btn.accordion__btn-open {
+  .accordion__btn-icon {
+    background-image: url('../img/sprites/min.svg');
+    transition: all 200ms ease-in-out;
+  }
+}

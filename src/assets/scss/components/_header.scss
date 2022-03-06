@@ -1,0 +1,52 @@
+.header {
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    @include _768 {
+      justify-content: center;
+
+      .header__interface {
+        display: none;
+      }
+
+      .header__location {
+        display: none;
+      }
+    }
+  }
+
+  &__main {
+    padding: 14px 0;
+    border-bottom: 1px solid #d8dde7;
+  }
+
+  &__location {
+    display: flex;
+    cursor: pointer;
+
+    svg {
+      width: 20px;
+      height: 20px;
+    }
+
+    span {
+      font-size: 1.4rem;
+      line-height: 2rem;
+      font-weight: 400;
+      color: $textGray;
+      margin-left: 8px;
+    }
+  }
+
+  &__logo {
+    img {
+      width: 152px;
+    }
+  }
+
+  &__interface button:not(:first-child) {
+    margin-left: 20px;
+  }
+}

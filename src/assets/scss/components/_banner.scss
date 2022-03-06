@@ -1,0 +1,56 @@
+.banner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 40px;
+
+  background: $violet;
+  border-radius: 4px;
+  margin: 8px;
+  color: $textWhite;
+  font-weight: 400;
+
+  @include _768 {
+    height: 56px;
+    text-align: center;
+    font-size: 1.4rem;
+    line-height: 2rem;
+
+    &__arrow-back {
+      margin-left: 8px;
+    }
+
+    &__arrow-next {
+      margin-right: 8px;
+    }
+  }
+
+  &__arrow {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__arrow-back {
+    margin-left: 24px;
+  }
+
+  &__arrow-next {
+    margin-right: 24px;
+  }
+
+  &__arrow-not-active {
+    opacity: 0.4;
+    cursor: auto;
+  }
+
+  svg {
+    width: 20px;
+    height: 20px;
+
+    path {
+      fill: #fff;
+    }
+  }
+}
